@@ -1,0 +1,12 @@
+name: Hello world
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Run pwd
+      run: pwd
+    - name: Run ls -la
+      run: ls -la
+      
