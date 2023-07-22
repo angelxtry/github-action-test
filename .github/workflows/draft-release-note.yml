@@ -2,13 +2,13 @@ name: draft release note
 on:
   pull_request:
     branches:
-      - prod
+      - main
     types:
       - closed
 jobs:
   draft-release-note:
     runs-on: ubuntu-latest
-    if: github.event.pull_request.merged == true && github.base.ref == 'prod'
+    if: github.event.pull_request.merged == true && github.base.ref == 'main'
     steps:
       - name: Release drafter
         uses: release-drafter/release-drafter@v5
