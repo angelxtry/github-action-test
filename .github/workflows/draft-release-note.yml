@@ -1,0 +1,17 @@
+name: draft release note
+on:
+  pull_request:
+    branches:
+      - prod
+    types:
+      - closed
+jobs:
+  draft-release-note:
+    runs-on: ubuntu-latest
+    if: github.event.pull_request.merged == true && github.base.ref == 'prod'
+    steps:
+      - name: Release drafter
+        uses: release-drafter/release-drafter@v5
+        with:
+          config-file: .github/release-drafter-config.yml
+          token: ${{ secrets.GITHUB_TOKEN }}
