@@ -4,10 +4,10 @@ enable:
 labels:
   'feature':
     include:
-      - '\bfeature/\'
+      - '\bfeature\b'
   'fix':
     include:
-      - '\bfix/\'
+      - '\bfix\b'
   'chore':
     include:
-      - '\bchore/\'
+      - '\bchore\b'
