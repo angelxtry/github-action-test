@@ -2,7 +2,7 @@ console.log('major update');
 
 console.log('feature-2');
 
-console.log('feature-3-1');
+console.log('feature-3-2');
 
 console.log('feature-4-1');
 
