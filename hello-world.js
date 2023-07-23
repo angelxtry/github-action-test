@@ -13,6 +13,7 @@ console.log('feature-5-2');
 console.log('feature-5-3');
 
 console.log('feature-6');
+console.log('feature-7');
 
 console.log('fix-1-2');
 
