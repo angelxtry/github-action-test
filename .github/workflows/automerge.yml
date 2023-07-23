@@ -1,8 +1,6 @@
 name: automerge
 on:
   pull_request_review:
-    branches:
-      - prod
     types: [submitted]
 jobs:
   automerge:
@@ -19,3 +17,4 @@ jobs:
           MERGE_RETRIES: "0"
           MERGE_REQUIRED_APPROVALS: "1"
           UPDATE_LABELS: ""
+          BASE_BRANCHES: "prod"
