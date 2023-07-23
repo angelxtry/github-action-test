@@ -1,0 +1,12 @@
+name: auto labels
+on:
+  pull_request_target:
+    types: [ opened ]
+jobs:
+  auto-labels:
+    runs-on: ubuntu-latest
+    steps:
+     - name: auto labels
+       uses: "jimschubert/labeler-action@v2"
+       with:
+         GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}

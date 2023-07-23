@@ -1,0 +1,13 @@
+enable:
+  prs: true
+
+labels:
+  'feature':
+    include:
+      - '\bfeature\\'
+  'fix':
+    include:
+      - '\bfix\\'
+  'chore':
+    include:
+      - '\bchore\\'
