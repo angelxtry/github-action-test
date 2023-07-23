@@ -1,13 +1,6 @@
 console.log('major update');
 
-console.log('feature-2');
-console.log('feature-3-2');
-console.log('feature-4-1');
-console.log('feature-5-1');
-console.log('feature-5-2');
-console.log('feature-5-3');
-console.log('feature-6');
-console.log('feature-7');
+console.log('feature-12');
 
 console.log('fix-1-2');
 
