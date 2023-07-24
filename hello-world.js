@@ -5,4 +5,4 @@ console.log('task-2');
 
 console.log('fix-1');
 
-console.log('chore-1');
+console.log('chore-2');
