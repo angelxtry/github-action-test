@@ -2,7 +2,7 @@ name: draft release note
 on:
   push:
     branches:
-      - prod
+      - main
 permissions:
   contents: read
 jobs:
