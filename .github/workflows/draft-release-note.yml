@@ -5,6 +5,8 @@ on:
       - prod
     types:
       - closed
+permissions:
+  contents: read
 jobs:
   draft-release-note:
     permissions:
