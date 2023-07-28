@@ -1,6 +1,8 @@
 name: auto labels
 on:
   pull_request_target:
+    branches:
+      - main
     types: [ opened ]
 jobs:
   auto-labels:
