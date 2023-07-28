@@ -1,9 +1,8 @@
 name: draft release note
 on:
-  pull_request:
+  push:
     branches:
       - prod
-    types: [opened, reopened, synchronize]
 permissions:
   contents: read
 jobs:
