@@ -3,6 +3,8 @@ on:
   push:
     branches:
       - main
+    branches-ignore:
+      - stage
 permissions:
   contents: read
 jobs:
