@@ -1,14 +1,13 @@
-name: auto labels
-on:
-  pull_request:
-    types: [ opened ]
-    branches:
-      - main
+name: PR Branch Labeler
+
+on: pull_request
+
 jobs:
-  main-branch-auto-labels:
+  label_prs:
     runs-on: ubuntu-latest
     steps:
-     - name: auto labels
-       uses: "jimschubert/labeler-action@v1"
-       with:
-         GITHUB_TOKEN: ${{secrets.MY_GITHUB_TOKEN}}
+      - name: Label PRs
+        if: github.event.action == 'opened' # Only run the action when the PR was first opened
+        uses: ffittschen/pr-branch-labeler@v1
+        with:
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
