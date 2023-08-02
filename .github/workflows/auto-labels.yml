@@ -1,11 +1,11 @@
 name: auto labels
 on:
-  pull_request_target:
+  pull_request:
+    types: [ opened ]
     branches:
       - main
-    types: [ opened ]
 jobs:
-  auto-labels:
+  main-branch-auto-labels:
     runs-on: ubuntu-latest
     steps:
      - name: auto labels
