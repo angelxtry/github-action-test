@@ -1,4 +1,4 @@
-console.log('major update!!!');
+console.log('exclude label test!!!');
 
 console.log('feature-12');
 console.log('task-3');
