@@ -1,0 +1,41 @@
+name: Create Jira Release
+on:
+  release:
+    types: [published]
+
+jobs:
+  create_release:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Check out code
+      uses: actions/checkout@v2
+
+    - name: Get current date
+      id: date
+      run: echo "{date}={$(date +'%Y-%m-%d')}" >> $GITHUB_OUTPUT
+
+      
+    - name: Get current tag name
+      run: echo "Tag name from github.ref_name:${{github.ref_name}}"
+
+    - name: 지라 버전 생성
+      env:
+        NEW_VERSION: ${{ steps.bump_version.outputs.new_version }}
+        APP_NAME: ${{ github.event.inputs.app }}
+      run: |
+        # Jira API 호출
+        curl --request POST \
+          --url 'https://fitpeters.atlassian.net/rest/api/2/version' \
+          --user '${{ secrets.JIRA_USERNAME }}:${{ secrets.JIRA_API_TOKEN }}' \
+          --header 'Accept: application/json' \
+          --header 'Content-Type: application/json' \
+          --data '{
+            "project": "TJP",
+            "name": "${{github.ref_name}}",
+            "description": "Created by GitHub Actions",
+            "archived": false,
+            "startDate": "${{ steps.date.outputs.date }}",
+            "released": false
+          }'
+          
