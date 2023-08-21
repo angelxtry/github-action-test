@@ -1,0 +1,11 @@
+name: Create Jira Release
+on:
+  release:
+    types: [published]
+
+jobs:
+  create_release:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Get current tag name
+      run: echo "Tag name from github.ref_name: ${{  github.ref_name }}"
