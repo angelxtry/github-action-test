@@ -12,7 +12,7 @@ jobs:
       uses: actions/checkout@v3
 
     - name: Get current date
-      run: echo "DATE=$(date +"%Y-%m-%d")" >> $GITHUB_ENV
+      run: echo "DATE=$(date +'%Y-%m-%d')" >> $GITHUB_ENV
 
       
     - name: Get current tag name
@@ -34,7 +34,7 @@ jobs:
             "name": "${{github.ref_name}}",
             "description": "Created by GitHub Actions",
             "archived": false,
-            "startDate": $DATE,
+            "startDate": "${{ env.DATE }}",
             "released": false
           }'
           
