@@ -34,7 +34,7 @@ jobs:
             "name": "${{github.ref_name}}",
             "description": "Created by GitHub Actions",
             "archived": false,
-            "startDate": $DATE,
+            "startDate": "${{ env.DATE }}",
             "released": false
           }'
           
